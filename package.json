@@ -1,0 +1,17 @@
+{
+  "name": "openhab-ext",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Christian Sowada",
+  "license": "ISC",
+  "dependencies": {
+    "openhab": "^4.6.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  }
+}
