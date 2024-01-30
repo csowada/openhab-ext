@@ -88,14 +88,19 @@ export const statesAsNumber = (itemNames: Item[] | string[], callback: (values: 
   callback(results);
 }
 
-export const stateEquals = (itemName: Item | string | null | undefined, value: any) => {
+export const stateEquals = (itemName: Item | string | null | undefined, value: string) => {
 
   if(itemName == null || itemName == undefined) {
     return false;
   }
 
   const item = getItem(itemName);
-  return item == value;
+
+  if (typeof value == "number") {
+    return item?.numericState == value;
+  }
+
+  return item?.state == value;
 }
 
 export const postUpdate = (item: Item | string, value: string | typeof ZonedDateTime | Quantity | HostState | number) => {

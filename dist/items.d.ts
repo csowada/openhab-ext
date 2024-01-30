@@ -22,7 +22,7 @@ export declare const getItem: (item: Item | string, callback?: ((item: Item) => 
  */
 export declare const stateAsNumber: (itemName: Item | string, callback?: ((value: number) => void) | undefined) => number;
 export declare const statesAsNumber: (itemNames: Item[] | string[], callback: (values: number[]) => void) => void;
-export declare const stateEquals: (itemName: Item | string | null | undefined, value: any) => boolean;
+export declare const stateEquals: (itemName: Item | string | null | undefined, value: string) => boolean;
 export declare const postUpdate: (item: Item | string, value: string | typeof ZonedDateTime | Quantity | HostState | number) => void;
 /**
  * Sends a command to an item
