@@ -39,7 +39,7 @@ export const getItem = (item: Item | string, callback?: (item: Item) => void): I
       itm = items.getItem(item);
 
     } catch (e) {
-      console.debug("Unable to find item with name \"{}\" !", item);
+      console.debug(`Unable to find item with name ${item} !`);
       itm = null;
     }
   } else {
@@ -62,7 +62,7 @@ export const stateAsNumber = (itemName: Item | string, callback?: (value: number
   let item = getItem(itemName);
   if (item) {
     let state = item.numericState;
-    if (state) {
+    if (typeof state === "number") {
       if (callback) {
         callback(state);
       }
