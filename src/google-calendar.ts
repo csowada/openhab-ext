@@ -302,7 +302,7 @@ export class GoogleCalendarEvents extends GoogleCalendarBase {
       orderBy: "startTime"
     };
 
-    console.log(JSON.stringify(CALENDAR_PARAMS, null, 2));
+    // console.log(JSON.stringify(CALENDAR_PARAMS, null, 2));
 
     const allEvents: Event[] = [];
 
