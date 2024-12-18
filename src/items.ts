@@ -1,6 +1,7 @@
 import { items } from "openhab";
 import { Item, Quantity } from "openhab/types/items/items";
-import { ZonedDateTime } from "openhab/types/time"
+// import { ZonedDateTime } from "openhab/types/time"
+import { ZonedDateTime } from "@js-joda/core";
 
 /**
  * Export items proxy as any type to define it later on

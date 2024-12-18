@@ -8,10 +8,8 @@
   },
   "author": "Christian Sowada",
   "license": "ISC",
-  "dependencies": {
-    "openhab": "^4.6.0"
-  },
   "devDependencies": {
-    "typescript": "^4.5.4"
+    "openhab": "^5.8.1",
+    "typescript": "^5.7.2"
   }
 }

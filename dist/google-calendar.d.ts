@@ -1,6 +1,6 @@
 import { ZonedDateTime } from "@js-joda/core";
 import { OAuth2HttpClient } from "./oauth2client";
-declare type CalendarList = {
+type CalendarList = {
     "kind": "calendar#calendarListEntry";
     "etag": string;
     "id": string;
@@ -37,14 +37,14 @@ declare type CalendarList = {
         ];
     };
 };
-declare type CalendarListListResponse = {
+type CalendarListListResponse = {
     kind: "calendar#calendarList";
     etag: string;
     nextPageToken: string;
     nextSyncToken: string;
     items: CalendarList[];
 };
-export declare type Event = {
+export type Event = {
     "kind": "calendar#event";
     "etag": string;
     "calenderName": string;
@@ -219,7 +219,7 @@ export declare type Event = {
     "eventType": string;
     "timeType": "appointment" | "allday" | "multiday";
 };
-declare type EventListResponse = {
+type EventListResponse = {
     "kind": "calendar#events";
     "etag": string;
     "summary": string;
@@ -237,10 +237,10 @@ declare type EventListResponse = {
     "nextSyncToken": string;
     "items": Event[];
 };
-declare type JsMap = {
+type JsMap = {
     [key: string]: string | number | boolean;
 };
-export declare type UiCalenderEntry = {
+export type UiCalenderEntry = {
     title: string;
     type: string;
     dateTimeString: string;
@@ -256,7 +256,7 @@ export declare class GoogleCalendarList extends GoogleCalendarBase {
     list(): CalendarListListResponse;
     get(calendarId: string): CalendarList;
 }
-declare type xy = JsMap & {
+type xy = JsMap & {
     maxResults: number;
 };
 export declare class GoogleCalendarEvents extends GoogleCalendarBase {

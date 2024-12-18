@@ -1,4 +1,4 @@
-declare type JsMap = {
+type JsMap = {
     [key: string]: string;
 };
 interface AccessTokenResponse {

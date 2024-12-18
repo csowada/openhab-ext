@@ -1,7 +1,21 @@
-export declare const now: () => import("@js-joda/core").ZonedDateTime;
-export declare const midnight: () => import("@js-joda/core").ZonedDateTime;
-export declare const convertJsDateToLocalDateTime: (s: Date) => import("@js-joda/core").LocalDateTime;
-export declare const convertJsDateToZonedDateTime: (s: Date) => import("@js-joda/core").ZonedDateTime;
+import { ZonedDateTime, LocalDateTime } from "@js-joda/core";
+/**
+ *
+ * @returns { ZonedDateTime } dfd
+ */
+export declare const now: () => ZonedDateTime;
+/**
+ *
+ * @returns { ZonedDateTime }
+ */
+export declare const midnight: () => ZonedDateTime;
+/**
+ *
+ * @param {Date} s hello
+ * @returns { LocalDateTime }
+ */
+export declare const convertJsDateToLocalDateTime: (s: Date) => LocalDateTime;
+export declare const convertJsDateToZonedDateTime: (s: Date) => ZonedDateTime;
 /**
  * Create a Timer based on millliseconds
  * @param millis
