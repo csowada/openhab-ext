@@ -47,7 +47,7 @@ type CalendarListListResponse = {
   items: CalendarList[]
 }
 
-export type Event = {
+export type CalendarEvent = {
   "kind": "calendar#event",
   "etag": string,
   "calenderName": string
@@ -217,7 +217,7 @@ export type Event = {
   "timeType": "appointment" | "allday" | "multiday"
 }
 
-type EventListResponse = {
+type CalendarEventListResponse = {
   "kind": "calendar#events",
   "etag": string,
   "summary": string,
@@ -233,7 +233,7 @@ type EventListResponse = {
   ],
   "nextPageToken": string,
   "nextSyncToken": string,
-  "items": Event[]
+  "items": CalendarEvent[]
 }
 
 type JsMap = { [key: string]: string | number | boolean }
@@ -304,7 +304,7 @@ export class GoogleCalendarEvents extends GoogleCalendarBase {
 
     console.log(JSON.stringify(CALENDAR_PARAMS, null, 2));
 
-    const allEvents: Event[] = [];
+    const allEvents: CalendarEvent[] = [];
 
     calendarIds.forEach(calendarId => {
       const e = this.list(calendarId, CALENDAR_PARAMS).items;
@@ -325,13 +325,13 @@ export class GoogleCalendarEvents extends GoogleCalendarBase {
     return allEvents;
   }
 
-  public list(calendarId: string, parameters: xy): EventListResponse {
+  public list(calendarId: string, parameters: xy): CalendarEventListResponse {
 
     let p = Object.keys(parameters).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(parameters[key])).join("&");
     if (p.length > 0) {
       p = "?" + p;
     }
-    const json = this.apiClient.sendHttpGet(`https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events${p}`) as ErrorResponse & EventListResponse
+    const json = this.apiClient.sendHttpGet(`https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events${p}`) as ErrorResponse & CalendarEventListResponse
 
     if (json.error) {
       throw new Error(`GCalErr: ${json.error.message}`)

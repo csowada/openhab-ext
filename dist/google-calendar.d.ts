@@ -44,7 +44,7 @@ type CalendarListListResponse = {
     nextSyncToken: string;
     items: CalendarList[];
 };
-export type Event = {
+export type CalendarEvent = {
     "kind": "calendar#event";
     "etag": string;
     "calenderName": string;
@@ -219,7 +219,7 @@ export type Event = {
     "eventType": string;
     "timeType": "appointment" | "allday" | "multiday";
 };
-type EventListResponse = {
+type CalendarEventListResponse = {
     "kind": "calendar#events";
     "etag": string;
     "summary": string;
@@ -235,7 +235,7 @@ type EventListResponse = {
     ];
     "nextPageToken": string;
     "nextSyncToken": string;
-    "items": Event[];
+    "items": CalendarEvent[];
 };
 type JsMap = {
     [key: string]: string | number | boolean;
@@ -260,7 +260,7 @@ type xy = JsMap & {
     maxResults: number;
 };
 export declare class GoogleCalendarEvents extends GoogleCalendarBase {
-    listMultipleInRange(calendarIds: string[], maxResultsPerCalendar: number, timeMin: ZonedDateTime, maxTime: ZonedDateTime): Event[];
-    list(calendarId: string, parameters: xy): EventListResponse;
+    listMultipleInRange(calendarIds: string[], maxResultsPerCalendar: number, timeMin: ZonedDateTime, maxTime: ZonedDateTime): CalendarEvent[];
+    list(calendarId: string, parameters: xy): CalendarEventListResponse;
 }
 export {};
